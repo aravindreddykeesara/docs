@@ -1,6 +1,7 @@
 ## Need for a State Store
 
-The primary requirement of the `nwq-group-builder` application is to designate a single claim as the primary claim within a unique group of claims. In our Kafka Streams application, we process each claim record individually. After a record has been processed and published to the output topic, its information is not retained. 
+The primary requirement of the `nwq-group-builder` application is to designate a single claim as the primary claim within a unique group of claims. In our Kafka Streams application, we process each claim record individually. After a record has been processed and published to the output topic, its information is not retained.
+
 To effectively compare multiple claims within the same group, it is necessary to have a repository where these claims can be stored and accessed for comparison purposes. Therefore, for each veteran identified by a unique `veteranPersonID`, we create and maintain a record in the state store. This record logs all claims associated with the veteran, facilitating subsequent comparison operations
 
 ## Usage of the State Store
